@@ -18,3 +18,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('hello', 'HelloController');
+Route::post('hello', 'HelloController@index')->name('index');
+/*
+Route::post('hello', 'HelloController@getdata')->name('getdata');
+*/
+Route::get('login_count', 'LoginCountController@index');
+Route::get('ajax/login_count', 'LoginCountController@ajax_index');
+/*
+Route::get('ajax/login_count', 'resDataController@ajax_index');
+*/
