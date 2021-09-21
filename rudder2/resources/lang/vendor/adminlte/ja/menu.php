@@ -16,4 +16,10 @@ return [
     'important'                     => '重要',
     'warning'                       => '警告',
     'information'                   => 'インフォメーション',
+    'brand_ctrl'                    => 'ブランド管理',
+    'sales_ctrl'                    => '売上管理',
+    'dashboard'                     => 'ダッシュボード',
+    'level_one1'                    => '売上予測分析',
+    'level_one2'                    => 'CVR/AOV分析',
+    'level_one3'                    => '会員分析',
 ];

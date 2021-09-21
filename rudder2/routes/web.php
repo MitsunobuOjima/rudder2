@@ -28,3 +28,17 @@ Route::get('ajax/login_count', 'LoginCountController@ajax_index');
 /*
 Route::get('ajax/login_count', 'resDataController@ajax_index');
 */
+Route::get('/brands/adminlte', function () {
+    return view('/brands/adminlte');
+});
+Route::get('/dashboard', function () {
+    return view('/dashboard');
+});
+
+Route::resource('disp_graph_sales', 'HelloController');
+Route::post('disp_graph_sales', 'HelloController@index')->name('index');
+/*
+Route::get('/disp_graph_sales', function () {
+    return view('/disp_graph_sales');
+});
+*/

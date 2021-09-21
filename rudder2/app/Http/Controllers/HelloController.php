@@ -13,8 +13,7 @@ class HelloController extends Controller
     //
     public function index(Request $request)
     {
-
-        Log::debug(print_r($request['selectedBrands'], true));
+        Log::debug('Step-1');
 /*
         Log::debug(print_r($request['fromyear'], true));
         Log::debug(print_r($request['frommonth'], true));
@@ -26,19 +25,28 @@ class HelloController extends Controller
 
         $current_month = null;
         $this_month_counter = null;
-        $total_product_max_value = null;
+        $total_product_max_value = 10000;
         $moving_average_deviations = 7;
         $arrTargetDate = array();
         $arrTotalProduct = array();
         $arrMovingAverage = array();
         $arrMovingAverageTemp = array();
 #        print_r ($request['selectedBrands']);
+        Log::debug('Step-2');
 
         $brand_lists = new MtbBrandLists;
 #        $value = $user->find(1);
         $value = $brand_lists->get();
 
         $order_data = new DtbOrderAllBrand;
+
+        Log::debug('Step-3');
+        Log::debug(print_r($request['selectedBrands'], true));
+        if (empty($request['selectedBrands'])) {
+        Log::debug('Step-4');
+#                array_push($request['selectedBrands'], 7);
+        }
+        Log::debug('Step-5');
 
         if (is_array($request['selectedBrands'])) {
                 $arrOrderData = $order_data->whereIn('brand_id', $request['selectedBrands'])
@@ -127,7 +135,7 @@ class HelloController extends Controller
 
 #        return view('hello', compact('value', 'value'));
 
-        return view('hello')->with('value', $value)->with('arrOrderData', $arrOrderData)->with('arrTargetDate', $arrTargetDate)->with('arrTotalProduct', $arrTotalProduct)->with('arrMovingAverage', $arrMovingAverage)->with('total_product_max_value', $total_product_max_value);
+        return view('disp_graph_sales')->with('value', $value)->with('arrOrderData', $arrOrderData)->with('arrTargetDate', $arrTargetDate)->with('arrTotalProduct', $arrTotalProduct)->with('arrMovingAverage', $arrMovingAverage)->with('total_product_max_value', $total_product_max_value);
 
         $hello = 'Hello World AKQJT';     
 #        return view('hello', compact('hello') );
