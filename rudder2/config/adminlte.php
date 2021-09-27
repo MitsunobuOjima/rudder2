@@ -245,8 +245,8 @@ return [
             'url'  => 'admin/dashboard',
         ],
         [
-            'text' => 'brand_ctrl',
-            'url'  => 'admin/brand_ctrl',
+            'text' => 'ctrl_brand',
+            'url'  => 'ctrl_brand',
             'icon' => 'fas fa-fw fa-user',
         ],
         [

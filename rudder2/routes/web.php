@@ -42,3 +42,6 @@ Route::get('/disp_graph_sales', function () {
     return view('/disp_graph_sales');
 });
 */
+Route::resource('ctrl_brand', 'BrandController');
+Route::post('ctrl_brand', 'BrandController@index')->name('index');
+Route::post('ctrl_brand/edit','BrandController@edit');
