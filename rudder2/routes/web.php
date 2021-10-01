@@ -45,3 +45,5 @@ Route::get('/disp_graph_sales', function () {
 Route::resource('ctrl_brand', 'BrandController');
 Route::post('ctrl_brand', 'BrandController@index')->name('index');
 Route::post('ctrl_brand/edit','BrandController@edit');
+Route::post('ctrl_brand/select_year','BrandController@select_year');
+Route::post('ctrl_brand/edit_budget','BrandController@edit_budget');
