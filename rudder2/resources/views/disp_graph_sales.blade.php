@@ -132,6 +132,12 @@
                         @endforeach
                     </table>
                 </div>
+
+
+
+
+
+
 @stop
 
 @section('css')
@@ -356,6 +362,10 @@
         var arrHoge = @json(isset($arrMovingAverage) ? $arrMovingAverage: [], JSON_PRETTY_PRINT);
         var arrFuga = @json(isset($arrTotalProduct) ? $arrTotalProduct: [], JSON_PRETTY_PRINT);
 
+
+
+
+
 //          options.series[1].data = data[0];
           options.series[1].data = arrHoge;
 //          options.series[1].data = data[1];
@@ -373,4 +383,5 @@
  
       });
     </script>
+
 @stop
